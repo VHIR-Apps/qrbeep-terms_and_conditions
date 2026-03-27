@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - QR Beep Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #050505;
+            --card: #0F0F0F;
+            --border: #1A1A1A;
+            --gold: #FFD700;
+            --cyan: #00D9FF;
+            --text: #E0E0E0;
+            --muted: #888888;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(0, 217, 255, 0.03) 100%);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .header-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--gold);
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .header .app-name {
+            color: var(--cyan);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .header .last-updated {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: border-color 0.3s;
+        }
+
+        .section:hover {
+            border-color: rgba(255, 215, 0, 0.15);
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
+            margin-right: 12px;
+        }
+
+        .section h2 {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 {
+            color: var(--cyan);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+        }
+
+        .section p {
+            color: var(--text);
+            font-size: 15px;
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        .section ul li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .section ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 10px;
+            top: 12px;
+        }
+
+        .highlight-box {
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box.warning {
+            background: rgba(255, 215, 0, 0.05);
+            border-color: rgba(255, 215, 0, 0.15);
+        }
+
+        .highlight-box.important {
+            background: rgba(255, 23, 68, 0.05);
+            border-color: rgba(255, 23, 68, 0.15);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 217, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-card h2 {
+            color: var(--gold);
+            justify-content: center;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 14px 32px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 12px;
+            color: var(--cyan);
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer .brand {
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px 60px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 24px 20px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-icon">📜</div>
+        <div class="app-name">QR BEEP PRO</div>
+        <h1>Terms & Conditions</h1>
+        <p class="last-updated">Last Updated: January 2025 &nbsp;|&nbsp; Version 2.0</p>
+    </div>
+
+    <!-- 1. ACCEPTANCE -->
+    <div class="section">
+        <h2><span class="section-number">1</span> Acceptance of Terms</h2>
+        <p>By downloading, installing, accessing, or using <strong>QR Beep Pro</strong> ("App"), you agree to be bound by these Terms and Conditions ("Terms"). These Terms constitute a legally binding agreement between you ("User", "you") and <strong>VHIR</strong> ("Company", "we", "us", "our").</p>
+        <p>If you do not agree to these Terms, you must immediately stop using the App and uninstall it from your device.</p>
+        <div class="highlight-box warning">
+            <p>⚠️ <strong>Please read these Terms carefully.</strong> They contain important information about your legal rights, remedies, and obligations. By using QR Beep Pro, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+        </div>
+    </div>
+
+    <!-- 2. DESCRIPTION -->
+    <div class="section">
+        <h2><span class="section-number">2</span> Description of Service</h2>
+        <p>QR Beep Pro is a mobile application that provides the following services:</p>
+        <ul>
+            <li>QR code and barcode scanning using device camera</li>
+            <li>QR code generation with customizable templates (Text, URL, WiFi, VCard, Email, Phone, SMS, WhatsApp, Instagram, YouTube, Spotify, PayPal, Crypto, Event, Geo, App Store)</li>
+            <li>Custom QR code styling with colors and logo embedding</li>
+            <li>Scan history management and secure vault storage</li>
+            <li>Gallery image scanning for QR codes</li>
+            <li>Payment scanner mode</li>
+            <li>AI-powered phishing detection</li>
+            <li>4K Ultra-HD QR code export (Pro feature)</li>
+            <li>Enterprise VIP access for businesses</li>
+        </ul>
+        <p>The App is available in both free and premium (Pro) tiers. Certain features are locked behind the Pro subscription or can be unlocked by watching advertisements.</p>
+    </div>
+
+    <!-- 3. ELIGIBILITY -->
+    <div class="section">
+        <h2><span class="section-number">3</span> Eligibility</h2>
+        <p>To use QR Beep Pro, you must:</p>
+        <ul>
+            <li>Be at least 13 years of age (or the minimum age required in your jurisdiction)</li>
+            <li>Have a compatible Android device running Android 5.0 (Lollipop) or higher</li>
+            <li>Have a valid Google Play account for downloading and purchasing</li>
+            <li>Comply with all applicable local, state, national, and international laws</li>
+        </ul>
+        <p>If you are under 18, you must have parental or guardian consent to use the App and make any purchases.</p>
+    </div>
+
+    <!-- 4. USER ACCOUNTS -->
+    <div class="section">
+        <h2><span class="section-number">4</span> User Accounts & Access</h2>
+        
+        <h3>4.1 Free Tier</h3>
+        <p>Free users have access to basic scanning and generation features. Free tier includes advertisements and may have limitations on certain premium features as determined by our admin configuration.</p>
+        
+        <h3>4.2 Pro Subscription</h3>
+        <p>Pro users enjoy ad-free experience and full access to all premium features. Pro subscriptions are available as weekly, monthly, or yearly auto-renewable plans.</p>
+        
+        <h3>4.3 Referral & Trial Access</h3>
+        <p>Users may receive temporary Pro access through referral codes. Trial access is limited to 3 days per referral redemption. Abuse of the referral system (including creating multiple accounts or self-referrals) is prohibited and may result in access revocation.</p>
+        
+        <h3>4.4 Enterprise VIP Access</h3>
+        <p>Businesses may purchase VIP licenses for their employees. VIP access is governed by separate enterprise terms, includes device limits, and is subject to license expiration dates.</p>
+    </div>
+
+    <!-- 5. SUBSCRIPTIONS -->
+    <div class="section">
+        <h2><span class="section-number">5</span> Subscriptions & Payments</h2>
+        
+        <h3>5.1 Subscription Plans</h3>
+        <ul>
+            <li><strong>Weekly Plan:</strong> Billed weekly, auto-renews every 7 days</li>
+            <li><strong>Monthly Plan:</strong> Billed monthly, auto-renews every 30 days</li>
+            <li><strong>Yearly Plan:</strong> Billed annually, auto-renews every 365 days</li>
+        </ul>
+        
+        <h3>5.2 Payment Processing</h3>
+        <p>All payments are processed through <strong>Google Play Store</strong>. By subscribing, you agree to Google Play's terms of service. We do not store or have access to your payment information.</p>
+        
+        <h3>5.3 Auto-Renewal</h3>
+        <p>Subscriptions automatically renew at the end of each billing period unless canceled at least 24 hours before the end of the current period. The renewal charge will be applied to your Google Play account.</p>
+        
+        <h3>5.4 Cancellation</h3>
+        <p>You may cancel your subscription at any time through:</p>
+        <ul>
+            <li>Google Play Store → Subscriptions → QR Beep Pro → Cancel</li>
+            <li>Settings within the App → Restore Purchases</li>
+        </ul>
+        <p>Cancellation takes effect at the end of the current billing period. No partial refunds are provided for unused portions of a subscription period.</p>
+        
+        <h3>5.5 Refunds</h3>
+        <p>Refund requests are handled by Google Play according to their refund policy. We recommend contacting Google Play Support directly for refund inquiries. For extenuating circumstances, you may also contact us at vhirsupport@gmail.com.</p>
+        
+        <div class="highlight-box">
+            <p>💡 <strong>Free Trial:</strong> If applicable, free trial periods are automatically converted to paid subscriptions unless canceled before the trial ends. You will be notified before any charges are applied.</p>
+        </div>
+    </div>
+
+    <!-- 6. ACCEPTABLE USE -->
+    <div class="section">
+        <h2><span class="section-number">6</span> Acceptable Use Policy</h2>
+        <p>When using QR Beep Pro, you agree NOT to:</p>
+        <ul>
+            <li>Use the App for any illegal, harmful, or malicious purposes</li>
+            <li>Generate QR codes containing malware, phishing links, or harmful content</li>
+            <li>Attempt to reverse engineer, decompile, or modify the App's source code</li>
+            <li>Circumvent, disable, or interfere with security features of the App</li>
+            <li>Use automated systems, bots, or scripts to interact with the App</li>
+            <li>Abuse the referral system, trial system, or ad-unlock mechanism</li>
+            <li>Share or redistribute VIP/Enterprise licenses without authorization</li>
+            <li>Attempt to access admin panel or backend systems without authorization</li>
+            <li>Use the App to infringe upon intellectual property rights of others</li>
+            <li>Distribute, sell, or commercially exploit the App without our written consent</li>
+        </ul>
+        <div class="highlight-box important">
+            <p>🚫 <strong>Violation of these terms may result in:</strong> Immediate termination of access, revocation of Pro/VIP privileges, and potential legal action where applicable.</p>
+        </div>
+    </div>
+
+    <!-- 7. INTELLECTUAL PROPERTY -->
+    <div class="section">
+        <h2><span class="section-number">7</span> Intellectual Property</h2>
+        <p>All intellectual property rights in QR Beep Pro, including but not limited to:</p>
+        <ul>
+            <li>App design, UI/UX, and visual elements</li>
+            <li>Source code, algorithms, and technical architecture</li>
+            <li>Trademarks, logos, and brand identifiers ("QR Beep Pro", "VHIR")</li>
+            <li>Documentation, promotional materials, and content</li>
+        </ul>
+        <p>are owned by <strong>VHIR</strong> and are protected by applicable copyright, trademark, and other intellectual property laws.</p>
+        <p>You are granted a limited, non-exclusive, non-transferable, revocable license to use the App solely for personal, non-commercial purposes in accordance with these Terms.</p>
+        
+        <h3>7.1 User-Generated Content</h3>
+        <p>QR codes you generate using the App are yours. We do not claim ownership over QR codes, logos, or content you create through the App. However, you are responsible for ensuring that content you encode in QR codes does not violate any third-party rights.</p>
+    </div>
+
+    <!-- 8. ADVERTISEMENTS -->
+    <div class="section">
+        <h2><span class="section-number">8</span> Advertisements</h2>
+        <p>Free users will encounter advertisements within the App. These ads are served by <strong>Unity Ads</strong> and may include:</p>
+        <ul>
+            <li>Banner advertisements displayed at the bottom of screens</li>
+            <li>Interstitial (full-screen) advertisements shown between actions</li>
+            <li>Rewarded video advertisements that unlock features temporarily</li>
+        </ul>
+        <p>Ad frequency, placement, and availability are controlled through our admin panel and may change without notice. We are not responsible for the content of third-party advertisements.</p>
+        <p>By watching rewarded ads, you may unlock certain features for a temporary period as specified at the time of viewing. This temporary access is not equivalent to a Pro subscription.</p>
+    </div>
+
+    <!-- 9. FEATURE ACCESS -->
+    <div class="section">
+        <h2><span class="section-number">9</span> Feature Access & Availability</h2>
+        <p>QR Beep Pro features are categorized into four access levels:</p>
+        <ul>
+            <li><strong>🟢 Free:</strong> Available to all users without restrictions</li>
+            <li><strong>🎬 Watch Ad:</strong> Available after watching a specified number of ads, unlocked for a specified duration</li>
+            <li><strong>👑 Premium:</strong> Available exclusively to Pro subscribers and VIP users</li>
+            <li><strong>🔴 Disabled:</strong> Temporarily or permanently unavailable</li>
+        </ul>
+        <p>Feature access levels may be changed at any time through our admin panel. We reserve the right to modify, add, or remove features without prior notice. Pro subscribers are guaranteed an ad-free experience, but specific feature availability may vary.</p>
+    </div>
+
+    <!-- 10. DISCLAIMERS -->
+    <div class="section">
+        <h2><span class="section-number">10</span> Disclaimers & Limitations</h2>
+        
+        <h3>10.1 Service "As Is"</h3>
+        <p>QR Beep Pro is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+        
+        <h3>10.2 Scanning Accuracy</h3>
+        <p>While we strive for high scanning accuracy, we do not guarantee that every QR code or barcode will be successfully scanned. Scanning performance depends on device camera quality, lighting conditions, and QR code quality.</p>
+        
+        <h3>10.3 AI Phishing Detection</h3>
+        <p>The AI Phishing Shield is provided as a supplementary security tool and should not be relied upon as your sole protection against malicious content. We do not guarantee detection of all phishing attempts or malicious URLs.</p>
+        
+        <h3>10.4 Third-Party Content</h3>
+        <p>We are not responsible for the content encoded in QR codes you scan, websites you visit through scanned links, or actions resulting from scanning third-party QR codes.</p>
+        
+        <h3>10.5 Limitation of Liability</h3>
+        <p>To the maximum extent permitted by applicable law, VHIR shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, data, use, goodwill, or other intangible losses resulting from:</p>
+        <ul>
+            <li>Your use or inability to use the App</li>
+            <li>Any unauthorized access to or alteration of your data</li>
+            <li>Any content obtained through the App</li>
+            <li>Loss of data stored on your device</li>
+        </ul>
+    </div>
+
+    <!-- 11. TERMINATION -->
+    <div class="section">
+        <h2><span class="section-number">11</span> Termination</h2>
+        <p>We reserve the right to terminate or suspend your access to the App at any time, with or without cause, including but not limited to:</p>
+        <ul>
+            <li>Violation of these Terms and Conditions</li>
+            <li>Abuse of the referral, trial, or ad-unlock systems</li>
+            <li>Fraudulent purchase activity</li>
+            <li>Use of the App for illegal purposes</li>
+            <li>Unauthorized sharing of VIP/Enterprise licenses</li>
+        </ul>
+        <p>Upon termination, your right to use the App ceases immediately. All locally stored data remains on your device until you uninstall the App.</p>
+    </div>
+
+    <!-- 12. UPDATES & MAINTENANCE -->
+    <div class="section">
+        <h2><span class="section-number">12</span> Updates & Maintenance</h2>
+        <p>We may release updates to the App that include bug fixes, new features, security patches, and improvements. Some updates may be mandatory ("Force Update") and the App may not function until updated.</p>
+        <p>We may also temporarily suspend the App for maintenance ("Maintenance Mode"). During maintenance, the App will display a maintenance notification and will not be usable.</p>
+        <p>We are not liable for any inconvenience caused by mandatory updates or maintenance periods.</p>
+    </div>
+
+    <!-- 13. GOVERNING LAW -->
+    <div class="section">
+        <h2><span class="section-number">13</span> Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of Bangladesh, without regard to its conflict of law principles.</p>
+        <p>Any disputes arising from these Terms or the use of the App shall be resolved through good-faith negotiation. If negotiation fails, disputes shall be submitted to the competent courts of Bangladesh.</p>
+    </div>
+
+    <!-- 14. CHANGES -->
+    <div class="section">
+        <h2><span class="section-number">14</span> Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. When we make significant changes:</p>
+        <ul>
+            <li>We will update the "Last Updated" date at the top</li>
+            <li>We may notify you through an in-app popup notification</li>
+            <li>Continued use of the App after changes constitutes acceptance</li>
+        </ul>
+        <p>We encourage you to review these Terms periodically. Material changes will be communicated through the App's notice system.</p>
+    </div>
+
+    <!-- 15. SEVERABILITY -->
+    <div class="section">
+        <h2><span class="section-number">15</span> Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall continue in full force and effect.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-card">
+        <h2><span class="section-number">📧</span> Contact Us</h2>
+        <p style="color: var(--muted); margin: 16px 0;">If you have any questions about these Terms and Conditions, please contact us:</p>
+        <a href="mailto:vhirsupport@gmail.com" class="contact-email">vhirsupport@gmail.com</a>
+        <p style="color: var(--muted); margin-top: 20px; font-size: 14px;">
+            <strong>Developer:</strong> VHIR<br>
+            <strong>App:</strong> QR Beep Pro<br>
+            <strong>Package:</strong> com.qr.beep.qrbeep
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2025 <span class="brand">VHIR</span> — All Rights Reserved</p>
+        <p style="margin-top: 8px;">QR Beep Pro — The Ultimate Scanner Engine</p>
+    </div>
+
+</div>
+
+</body>
+</html>
